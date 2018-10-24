@@ -1,0 +1,170 @@
+/* You can add global styles to this file, and also import other style files */
+:root {
+  --color: rgb(217, 255, 0);
+  --red: #EF463F;
+  --brown: rgb(37, 37, 37);
+  --purpleblue: #3A36A8;
+  --charcoalblack: #454545;
+  --yellow: #FFD401;
+  --yellow-light: #FFFA6A;
+  --background: (#f3f3f3);
+  --navbackground: rgba(0, 93, 255, 0.95); // rgba(1, 134, 255, .85);
+  --navborderbottom: (#000);
+}
+
+html {
+  font-family: 'Montserrat';
+  line-height: 1.15;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  height: 100%;
+}
+
+body {
+  font-family: 'Montserrat';
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: roboto;
+  src: url();
+  font-style: normal;
+  font-weight: 400;
+}
+
+#container {
+  background: var(--background);
+  display: grid;
+  grid-template-columns: repeat(5 1fr);
+}
+
+.wrapper {
+  color: white;
+  margin-top: 46px;
+  min-height: 90vh;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto;
+  grid-template-areas:
+      "title title title";
+  background: var(--navbackground);
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 69%, 0 92%);
+  clip-path: polygon(0 0, 100% 0, 100% 69%, 0 92%);
+}
+
+#sec1 {
+    grid-area: title;
+    justify-self: center;
+    align-self: start;
+    margin: 1rem;
+
+    h1 {
+      color: white;
+      font-weight: 400;
+      font-size: 2rem;
+    }
+
+    .btn-green {
+      padding: 0.5rem 1.5rem;
+      background: #26dcb7;
+      border-radius: 2px;
+      border: 1px solid #26dcb7;
+      font-weight: 550;
+      color: white;
+    }
+
+    .btn-default {
+      padding: 0.5rem 1.5rem;
+      background: none;
+      border-radius: 2px;
+      border: 1px solid white;
+      font-weight: 550;
+      color: white;
+      margin-left: 1.5rem;
+    }
+  }
+
+#products {
+  display: grid;
+  background: #f2f2f2;
+  grid-template-rows: auto;
+  grid-template-columns: 1fr;
+  justify-items: center;
+  align-items: center;
+  padding: 1.5rem;
+  grid-gap: 1em;
+
+  .sales-point {
+    display: grid;
+    grid-template-rows: auto;
+    justify-items: center;
+    align-items: center;
+  }
+}
+
+@media screen and (min-width: 800px) {
+  .wrapper {
+    display: grid;
+    grid-template-areas:
+      "title title img";
+  }
+
+  #sec1 {
+    grid-area: title;
+    justify-self: center;
+    align-self: start;
+    margin: 3rem;
+
+    h1 {
+      color: white;
+      font-weight: 500;
+      font-size: 4rem;
+    }
+
+    .btn-green {
+      padding: 0.5rem 1.5rem;
+      background: #26dcb7;
+      border-radius: 2px;
+      border: 1px solid #26dcb7;
+      font-weight: 550;
+      color: white;
+    }
+
+    .btn-default {
+      padding: 0.5rem 1.5rem;
+      background: none;
+      border-radius: 2px;
+      border: 1px solid white;
+      font-weight: 550;
+      color: white;
+      margin-left: 1.5rem;
+    }
+  }
+
+  #sec2 {
+    grid-area: img;
+    justify-self: center;
+    align-self: center;
+
+    .photo>img {
+      object-fit: cover;
+      width: 100%;
+      max-height: 100%;
+    }
+  }
+
+  #products {
+    grid-template-columns: repeat(3, auto);
+  }
+}
